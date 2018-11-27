@@ -17,15 +17,12 @@
       }
     ],
     "win": {
-      "target": "nsis",
-      "icon": "public/logo.ico"
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": false,
       "runAfterFinish": false,
-      "installerIcon": "public/logo.ico",
-      "installerHeaderIcon": "public/logo.ico",
       "artifactName": "${productName}-Setup-${version}.${ext}"
     },
     "directories": {
@@ -33,10 +30,11 @@
     }
   },
   "dependencies": {
+    "electron-updater": "^4.0.4",
     "source-map-support": "^0.5.9"
   },
   "devDependencies": {
-    "electron": "3.0.10",
+    "electron": "^3.0.10",
     "electron-builder": "^20.36.2",
     "electron-webpack": "^2.6.1",
     "webpack": "^4.26.0"
