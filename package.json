@@ -1,5 +1,5 @@
 {
-  "name": "electron-webpack-quick-start",
+  "name": "skroutz-electron",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -7,6 +7,30 @@
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "bratsos",
+        "repo": "skroutz-electron"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "runAfterFinish": false,
+      "installerIcon": "public/logo.ico",
+      "installerHeaderIcon": "public/logo.ico",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "directories": {
+      "buildResources": "public"
+    }
   },
   "dependencies": {
     "source-map-support": "^0.5.9"
